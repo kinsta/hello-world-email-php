@@ -17,9 +17,9 @@ if($_SERVER['REQUEST_URI'] === '/') {
     $email->setFrom($_ENV['TEST_EMAIL_FROM_ADDRESS']);
     $email->setSubject("My Test Email");
     $email->addTo($_ENV['TEST_EMAIL_TO_ADDRESS']);
-    $email->addContent("text/plain", "This is a test email sent when your application was deployed");
+    $email->addContent("text/plain", "This is a test email sent by your PHP application when you visited the test endpoint");
     $email->addContent(
-        "text/html", "This is a <strong>test</strong> email sent when your application was deployed"
+        "text/html", "This is a <strong>test</strong> email sent by your PHP application when you visited the test endpoint"
     );
     $sendgrid = new \SendGrid($_ENV['SENDGRID_API_KEY']);
     try {
