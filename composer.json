@@ -1,6 +1,6 @@
 {
     "name": "kinsta/hello-world-email-php",
-    "description": "An example of how to set your Node.js application to send emails via SendGrid from Kinsta App Hosting services.",
+    "description": "An example of how to set your PHP application to send emails via SendGrid from Kinsta App Hosting services.",
     "require": {
         "sendgrid/sendgrid": "~7",
         "vlucas/phpdotenv": "^5.4"
