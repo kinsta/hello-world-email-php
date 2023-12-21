@@ -9,9 +9,7 @@ if(!isset($_ENV['SENDGRID_API_KEY']) || !isset($_ENV['TEST_EMAIL_TO_ADDRESS']) |
     return;
 }
 
-if($_SERVER['REQUEST_URI'] === '/') {
-    echo "Hello World";
-} elseif($_SERVER['REQUEST_URI'] === "/" . $_ENV['TEST_ENDPOINT']) {
+if($_SERVER['REQUEST_URI'] === "/" . $_ENV['TEST_ENDPOINT']) {
 
     $email = new \SendGrid\Mail\Mail();
     $email->setFrom($_ENV['TEST_EMAIL_FROM_ADDRESS']);
@@ -28,6 +26,8 @@ if($_SERVER['REQUEST_URI'] === '/') {
     } catch (Exception $e) {
         echo 'Caught exception: '. $e->getMessage() ."\n";
     }
+} elseif($_SERVER['REQUEST_URI'] === '/') {
+    include 'index.html';
 } else {
     http_response_code(404);
     return;
